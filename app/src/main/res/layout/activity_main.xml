@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEDED"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/thanks_text"
+        />
+    <!-- Cost of Service Input -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/thanks_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanks For Your Coming!"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/input_tip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_tip"
+        android:inputType="number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cost of Service"
+        android:textColor="@color/black"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@id/ask_text"/>
+
+    <!-- How was the service? Text -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ask_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How was the service?"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/input_tip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Radio Group -->
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/button_a"
+        app:layout_constraintTop_toBottomOf="@id/ask_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <RadioButton
+            android:id="@+id/button_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazing (20%)"
+            android:textColor="@color/black"/>
+        <RadioButton
+            android:id="@+id/button_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good (18%)"
+            android:textColor="@color/black"/>
+        <RadioButton
+            android:id="@+id/button_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oke (15%)"
+            android:textColor="@color/black"/>
+    </RadioGroup>
+
+    <!-- Round Tip Switch -->
+    <Switch
+        android:id="@+id/switch_round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Round Tip"
+        android:textSize="16dp"
+        android:checked="true"
+        android:switchMinWidth="56dp"
+        android:textColor="@color/black"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/radio_group"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Calculate Button -->
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Calculate"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/switch_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Tip Amount Text -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tip_amount_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Amount :"
+        android:layout_marginTop="24dp"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/button_calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tip_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tip_amount_text"
+        android:layout_marginTop="40dp"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
